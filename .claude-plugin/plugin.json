@@ -1,0 +1,9 @@
+{
+  "name": "call-it",
+  "version": "0.1.0",
+  "description": "Talk to your Claude Code sessions from your phone: voice notes out, voice replies back, over Telegram.",
+  "author": { "name": "Arnav Prasad" },
+  "repository": "https://github.com/itsArnavPrasad/call-it",
+  "license": "MIT",
+  "keywords": ["voice", "telegram", "remote", "phone", "notifications", "permissions"]
+}

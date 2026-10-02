@@ -1,0 +1,16 @@
+{
+  "name": "call-it",
+  "owner": {
+    "name": "Arnav Prasad"
+  },
+  "metadata": {
+    "description": "call-it: talk to Claude Code from your phone."
+  },
+  "plugins": [
+    {
+      "name": "call-it",
+      "source": "./",
+      "description": "Talk to your Claude Code sessions from your phone: voice notes out, voice replies back, over Telegram."
+    }
+  ]
+}
