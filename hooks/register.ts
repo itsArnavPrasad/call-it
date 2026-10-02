@@ -328,7 +328,9 @@ async function ask($: $, signal: AbortSignal, spoken: string, caption: string, b
 }
 
 async function summarize($: $, answer: string): Promise<string> {
-  const r = await $.model.complete({ model: 'haiku', effort: 'low', maxTokens: 300, system: SUMMARY_SYSTEM, prompt: clip(answer, 8000) })
+  if (answer.length < 280) return speakable(answer) // already short enough to say
+  const prompt = `The assistant's final message:\n<message>\n${clip(answer, 8000)}\n</message>\nWrite the voice note.`
+  const r = await $.model.complete({ model: 'haiku', effort: 'low', maxTokens: 300, system: SUMMARY_SYSTEM, prompt })
   return r.isAnswered && r.text.trim() ? speakable(r.text) : clip(speakable(answer), 400)
 }
 
