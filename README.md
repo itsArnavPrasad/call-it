@@ -30,6 +30,11 @@ You start a long task, go make coffee, and come back twenty minutes later. Claud
 It works in every Claude Code session you have (terminal, VS Code, Cursor), all at once, from one Telegram chat.
 
 <p align="center">
+  <a href="brag-output/brag.mp4"><img src="brag-output/brag.jpg" alt="Watch the 22-second demo" width="80%"></a><br>
+  <sub>▶ <a href="brag-output/brag.mp4">Watch the 22-second demo</a> (with sound: that's the actual voice note)</sub>
+</p>
+
+<p align="center">
   <img src="docs/images/flows.png" alt="Three flows: task finished, permission request, question" width="100%">
 </p>
 

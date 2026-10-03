@@ -1,0 +1,3 @@
+I kept coming back to Claude Code sitting on "Do you want to proceed?" for 20 minutes. So now it calls my phone: a voice note when it finishes, needs a permission, or has a question, and I answer by talking back. One plugin, Telegram, speech stays on my Mac.
+
+/plugin marketplace add itsArnavPrasad/call-it
