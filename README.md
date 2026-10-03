@@ -49,6 +49,13 @@ You need **macOS**, **Claude Code 2.1.287 or newer**, and **Telegram** on your p
 /plugin install call-it@call-it
 ```
 
+In VS Code or Cursor, the chat panel has no `/plugin` command. Run this in a terminal instead, then start a new chat:
+
+```sh
+claude plugin marketplace add itsArnavPrasad/call-it
+claude plugin install call-it@call-it
+```
+
 **2. Make a bot.** In Telegram, open [@BotFather](https://t.me/BotFather), send `/newbot`, pick any name, and copy the token it gives you.
 
 **3. Connect.** Run:
