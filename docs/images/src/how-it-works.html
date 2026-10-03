@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+body { width: 1600px; height: 760px; position: relative; }
+h2 { position: absolute; left: 80px; top: 50px; font-size: 34px; letter-spacing: -.02em; }
+h2 span { color: var(--dim); font-weight: 500; font-size: 20px; margin-left: 14px; letter-spacing: 0; }
+.box { position: absolute; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+.box h4 { font-size: 17px; margin-bottom: 8px; }
+.box p, .box li { font-size: 13.5px; color: var(--dim); line-height: 1.55; }
+.box ul { list-style: none; }
+.box code { font-size: 12px; color: #e6c2b3; background: rgba(217,119,87,.12); }
+.sess { left: 80px; width: 330px; }
+.sess .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-right: 8px; }
+.hub { left: 560px; top: 150px; width: 430px; border-color: rgba(217,119,87,.5); box-shadow: 0 0 0 6px rgba(217,119,87,.06); }
+.phonebox { left: 1150px; top: 250px; width: 370px; }
+.tg { left: 1150px; top: 150px; width: 370px; padding: 12px 20px; text-align: center; }
+.voicebox { left: 1150px; top: 480px; width: 370px; }
+svg { position: absolute; inset: 0; }
+.tagline { position: absolute; left: 80px; bottom: 40px; color: var(--dim); font-size: 15px; }
+</style></head><body><div class="glow"></div>
+<h2>How it works <span>one plugin, every session, no server</span></h2>
+<svg width="1600" height="760"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97757"/></marker></defs>
+ <g stroke="#d97757" stroke-width="2" fill="none" stroke-dasharray="6 6" marker-end="url(#a)">
+  <path d="M410,215 C480,215 490,260 556,260"/><path d="M410,400 L556,400"/><path d="M410,585 C480,585 490,540 556,540"/>
+  <path d="M990,300 C1060,300 1060,195 1146,195"/><path d="M1146,215 C1080,215 1080,330 994,330"/>
+  <path d="M1335,232 L1335,246"/><path d="M990,520 C1060,520 1080,540 1146,540"/>
+ </g></svg>
+<div class="box sess" style="top:150px"><h4><span class="dot"></span>@api  · terminal</h4><p>Claude Code session with the plugin</p></div>
+<div class="box sess" style="top:335px"><h4><span class="dot"></span>@web  · VS Code</h4><p>Connected with <code>/callit</code></p></div>
+<div class="box sess" style="top:520px"><h4><span class="dot"></span>@app  · Cursor</h4><p>Or every session: <code>/callit all</code></p></div>
+<div class="box hub"><h4>call-it hooks, in every session</h4>
+<ul>
+<li>▸ <code>turn.complete</code> → Haiku writes a 3-sentence spoken summary</li>
+<li>▸ <code>tool.check</code> “ask” → waits for your Allow / Deny</li>
+<li>▸ <code>AskUserQuestion</code> → options as buttons</li>
+<li>▸ <code>Notification</code> → “waiting for you” nudges</li>
+<li style="margin-top:14px">▸ <b style="color:#e8eaf0">Shared folder</b> <code>~/.claude/call-it/</code></li>
+<li style="padding-left:16px">one session holds a <code>mkdir</code> lock and polls Telegram,</li>
+<li style="padding-left:16px">then files each message in the right session's inbox</li>
+<li style="margin-top:14px">▸ <b style="color:#e8eaf0">Routing</b>: swipe-reply → that session;</li>
+<li style="padding-left:16px"><code>@name …</code> → that session; else the last one that spoke</li>
+<li style="margin-top:14px">▸ Your words arrive as a prompt (<code>$.prompt.submit</code>),</li>
+<li style="padding-left:16px">or as the answer to whatever is waiting</li>
+</ul></div>
+<div class="box tg"><h4 style="margin:0">✈️ Telegram Bot API</h4></div>
+<div class="box phonebox"><h4>📱 Your phone</h4><p>Voice notes with captions and buttons. Reply by holding the mic, or type. Paired to your chat only, with a one-time code.</p></div>
+<div class="box voicebox"><h4>🧠 Speech stays on your Mac</h4><p><code>say</code> → <code>ffmpeg</code> → Opus voice note<br>voice note → <code>ffmpeg</code> → <code>whisper.cpp</code> → text<br>No speech API keys, no audio sent anywhere but your own chat.</p></div>
+<div class="tagline">Away from your desk? <code>/callit</code>. Back? <code>/callit</code> again.</div>
+</body></html>

@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+body { width: 1600px; height: 820px; position: relative; }
+.wrap { position: relative; display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 0 90px; }
+h1 { font-size: 104px; letter-spacing: -.045em; line-height: 1; font-weight: 800; }
+h1 em { font-style: normal; color: var(--accent); }
+.tag { font-size: 34px; margin-top: 22px; font-weight: 600; letter-spacing: -.01em; }
+.sub { font-size: 20px; color: var(--dim); margin-top: 18px; max-width: 600px; line-height: 1.5; }
+.chips { display: flex; gap: 10px; margin-top: 34px; flex-wrap: wrap; max-width: 700px; }
+.chips span { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 9px 16px; font-size: 15px; color: #c9cede; }
+.phones { position: relative; width: 720px; height: 760px; }
+.phones .phone { position: absolute; }
+.p1 { right: 0; top: 30px; }
+.term {
+  position: absolute; left: 0; top: 300px; width: 340px; padding: 16px 18px; border-radius: 14px;
+  background: #0f1117; border: 1px solid var(--line); box-shadow: 0 30px 60px rgba(0,0,0,.5);
+  font-family: "SF Mono", ui-monospace, Menlo, monospace; font-size: 12.5px; line-height: 1.6; color: #c9cede; z-index: 2;
+}
+.term .dots { display: flex; gap: 6px; margin-bottom: 10px; }
+.term .dots i { width: 10px; height: 10px; border-radius: 50%; background: #3a4052; display: block; }
+.term .o { color: var(--accent); } .term .g { color: var(--green); } .term .d { color: var(--dim); }
+</style></head><body><div class="glow"></div>
+<div class="wrap">
+  <div>
+    <div class="label">A Claude Code plugin</div>
+    <h1 style="margin-top:18px">call<em>-</em>it</h1>
+    <div class="tag">Talk to Claude Code from your phone.</div>
+    <div class="sub">Get a voice note when a session finishes, needs a permission, or has a question. Reply with your voice. Claude hears you and keeps going.</div>
+    <div class="chips"><span>🎙 Voice both ways</span><span>✈️ Telegram</span><span>🔐 Approve from anywhere</span><span>🧠 Local speech (say + whisper.cpp)</span><span>🪟 Every session</span></div>
+  </div>
+  <div class="phones">
+    <div class="term"><div class="dots"><i></i><i></i><i></i></div>
+<span class="d">~/api ›</span> /callit<br>
+<span class="g">📞 Connected as @api.</span><br>
+<span class="d">Finished tasks, permission prompts and<br>questions now go to your phone.</span><br><br>
+<span class="o">✻</span> Running migrations…<br>
+<span class="d">─────────────────────────────</span><br>
+<span class="o">📞 call-it · @api</span>
+    </div>
+    <div class="phone p1"><div class="notch"></div><div class="screen">
+      <div class="tg-head"><div class="avatar">📞</div><div><b>call-it</b><span>bot</span></div></div>
+      <div class="chat">
+        <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:05</div></div></div>🔐 @api wants to run a command: Run database migrations
+
+<code>npm run db:migrate</code><span class="time">10:41</span></div>
+        <div class="btns"><div>✅ Allow</div><div>❌ Deny</div></div>
+        <div class="msg out"><div class="voice"><div class="play"></div><div><div class="wave" data-n="20"></div><div class="dur">0:03</div></div></div><span class="time">10:42 ✓✓</span></div>
+        <div class="msg in">🎙 “Yes, and run the tests after.”<span class="time">10:42</span></div>
+        <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:07</div></div></div>✅ @api is done
+
+Migrations ran and all 142 tests pass. Want me to open a pull request?<span class="time">10:44</span></div>
+      </div>
+      <div class="input"><span>Message</span><div class="mic">🎙</div></div>
+    </div></div>
+  </div>
+</div>
+<script src="waves.js"></script></body></html>

@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+body { width: 1600px; height: 980px; position: relative; }
+.row { position: relative; display: flex; justify-content: center; gap: 70px; padding-top: 46px; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.col h3 { font-size: 26px; letter-spacing: -.01em; }
+.col p { color: var(--dim); font-size: 15px; margin-top: -10px; }
+.phone { height: 800px; }
+</style></head><body><div class="glow"></div>
+<div class="row">
+ <div class="col"><div class="label">1 · Finished</div><h3>Hear what it did</h3><p>A short spoken summary, plus the full answer.</p>
+  <div class="phone"><div class="notch"></div><div class="screen">
+   <div class="tg-head"><div class="avatar">📞</div><div><b>call-it</b><span>bot</span></div></div>
+   <div class="chat">
+    <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:08</div></div></div>✅ @web is done
+
+I fixed the login redirect loop. The bug was a stale cookie check in the middleware. Tests pass. Should I deploy to staging?<span class="time">18:02</span></div>
+    <div class="msg in" style="font-size:12px;color:#b6c2cf">Here's what changed:
+• <code>middleware.ts</code>: check <code>session.expiresAt</code> before redirecting
+• Added a regression test in <code>auth.test.ts</code>
+• All 88 tests pass…<span class="time">18:02</span></div>
+    <div class="msg out"><div class="voice"><div class="play"></div><div><div class="wave" data-n="18"></div><div class="dur">0:02</div></div></div><span class="time">18:05 ✓✓</span></div>
+    <div class="msg in">🎙 “Yep, deploy it.”<span class="time">18:05</span></div>
+   </div>
+   <div class="input"><span>Message</span><div class="mic">🎙</div></div>
+  </div></div></div>
+
+ <div class="col"><div class="label">2 · Permission</div><h3>Approve by voice</h3><p>Tap a button, or say “no, do X instead”.</p>
+  <div class="phone"><div class="notch"></div><div class="screen">
+   <div class="tg-head"><div class="avatar">📞</div><div><b>call-it</b><span>bot</span></div></div>
+   <div class="chat">
+    <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:04</div></div></div>🔐 @api wants to run a command: Install the dependencies
+
+<code>npm install stripe</code>
+
+Tap a button, or reply by voice: "yes", or "no, do X instead".<span class="time">11:20</span></div>
+    <div class="btns"><div>✅ Allow</div><div>❌ Deny</div></div>
+    <div class="msg out"><div class="voice"><div class="play"></div><div><div class="wave" data-n="22"></div><div class="dur">0:03</div></div></div><span class="time">11:21 ✓✓</span></div>
+    <div class="msg in">🎙 “No, we use pnpm here.”<span class="time">11:21</span></div>
+    <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:03</div></div></div>🔐 @api wants to run a command: Install with pnpm
+
+<code>pnpm add stripe</code><span class="time">11:21</span></div>
+    <div class="btns"><div>✅ Allow</div><div>❌ Deny</div></div>
+   </div>
+   <div class="input"><span>Message</span><div class="mic">🎙</div></div>
+  </div></div></div>
+
+ <div class="col"><div class="label">3 · Question</div><h3>Answer its questions</h3><p>Options become buttons. Or just talk.</p>
+  <div class="phone"><div class="notch"></div><div class="screen">
+   <div class="tg-head"><div class="avatar">📞</div><div><b>call-it</b><span>bot</span></div></div>
+   <div class="chat">
+    <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:09</div></div></div>❓ @app asks: Database
+
+Which database should the new service use?
+
+1. Postgres — matches the main app
+2. SQLite — zero setup, single file
+3. DynamoDB — serverless, pay per use<span class="time">09:12</span></div>
+    <div class="btns stack"><div>Postgres</div><div>SQLite</div><div>DynamoDB</div></div>
+    <div class="msg out" style="padding:8px 12px">Postgres<span class="time">09:13 ✓✓</span></div>
+    <div class="msg in"><div class="voice"><div class="play"></div><div><div class="wave" data-n="26"></div><div class="dur">0:05</div></div></div>✅ @app is done
+
+Postgres is wired up with migrations and a seed script.<span class="time">09:31</span></div>
+   </div>
+   <div class="input"><span>Message</span><div class="mic">🎙</div></div>
+  </div></div></div>
+</div>
+<script src="waves.js"></script></body></html>

@@ -1,0 +1,88 @@
+:root {
+  --bg: #0b0d12;
+  --panel: #12151d;
+  --line: #232838;
+  --text: #e8eaf0;
+  --dim: #8a91a6;
+  --accent: #d97757; /* Claude orange */
+  --accent2: #f0a988;
+  --tg-bg: #0e1621;
+  --tg-in: #182533;
+  --tg-out: #2b5278;
+  --tg-btn: #22303f;
+  --green: #4fd18b;
+  --red: #ff6b6b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(600px 400px at 15% 20%, rgba(217,119,87,.18), transparent 70%),
+    radial-gradient(700px 500px at 85% 80%, rgba(43,82,120,.25), transparent 70%);
+}
+
+/* phone */
+.phone {
+  width: 360px; height: 740px; border-radius: 48px; padding: 12px;
+  background: linear-gradient(160deg, #2a2f3d, #12151c);
+  box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 1.5px #3a4052;
+  position: relative;
+}
+.screen {
+  width: 100%; height: 100%; border-radius: 38px; overflow: hidden;
+  background: var(--tg-bg);
+  background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 18px 18px;
+  display: flex; flex-direction: column;
+}
+.notch { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); width: 110px; height: 30px; border-radius: 20px; background: #000; }
+.tg-head {
+  padding: 58px 16px 12px; display: flex; align-items: center; gap: 10px;
+  background: #17212b; border-bottom: 1px solid #0b121a;
+}
+.avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #b45a3c);
+  display: grid; place-items: center; font-size: 18px;
+}
+.tg-head b { font-size: 15px; display: block; }
+.tg-head span { font-size: 12px; color: #6d8bab; }
+.chat { flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px; justify-content: flex-end; }
+.msg {
+  max-width: 86%; padding: 8px 10px 6px; border-radius: 14px; font-size: 13px; line-height: 1.38;
+  white-space: pre-wrap; position: relative;
+}
+.in { background: var(--tg-in); align-self: flex-start; border-bottom-left-radius: 4px; }
+.out { background: var(--tg-out); align-self: flex-end; border-bottom-right-radius: 4px; }
+.time { font-size: 10.5px; color: #6d8bab; float: right; margin: 4px 0 0 10px; }
+.out .time { color: #9cc2e6; }
+.voice { display: flex; align-items: center; gap: 9px; margin-bottom: 4px; }
+.play {
+  width: 36px; height: 36px; border-radius: 50%; flex: none;
+  background: #5eb5f7; display: grid; place-items: center;
+}
+.out .play { background: #fff; }
+.play::after { content: ""; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+.out .play::after { border-left-color: var(--tg-out); }
+.wave { display: flex; align-items: center; gap: 2px; height: 24px; }
+.wave i { width: 3px; border-radius: 2px; background: #5eb5f7; display: block; }
+.out .wave i { background: #cfe4f7; }
+.dur { font-size: 11px; color: #6d8bab; margin-top: 2px; }
+.out .dur { color: #9cc2e6; }
+code { font-family: "SF Mono", ui-monospace, Menlo, monospace; font-size: 11.5px; background: rgba(0,0,0,.25); padding: 1px 4px; border-radius: 4px; }
+.btns { display: grid; gap: 4px; align-self: flex-start; width: 86%; grid-template-columns: 1fr 1fr; margin-top: -4px; }
+.btns.stack { grid-template-columns: 1fr; }
+.btns div { background: rgba(34,48,63,.92); border-radius: 10px; text-align: center; padding: 8px; font-size: 13px; font-weight: 600; }
+.input {
+  margin: 0 8px 18px; height: 42px; border-radius: 21px; background: #17212b;
+  display: flex; align-items: center; padding: 0 6px 0 16px; color: #5d6f82; font-size: 14px; justify-content: space-between;
+}
+.mic { width: 32px; height: 32px; border-radius: 50%; background: #5eb5f7; display: grid; place-items: center; font-size: 15px; }
+.label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent2); font-weight: 700; }
